@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>FRUTAS rb</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./imagenes/icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <style>
+    #btnUpdate {  
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="juego" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+        aria-selected="true">LISTADO PRINCIPAL</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="crud" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">CRUD
+        DE FRUTAS</a>
+    </li>
+
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <!-- PANEL DEL JUEGO -->
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="juego">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">JUEGO</h1>
+
+          <!-- Listado Principal -->
+          <div id="imagesListadoPrincipal">
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <!-- PANEL DEL CRUD -->
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="crud">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">FRUTAS</h1>
+
+          <!-- formulario -->
+          <form>
+            <input type="hidden" id="fruitId">
+            <select id="cbImagenes">
+              <option value="./imagenes/1.jpg">Manzanas</option>
+              <option value="./imagenes/2.jpg">Moras</option>
+              <option value="./imagenes/3.jpg">Bananos</option>
+              <option value="./imagenes/4.jpg">Kiwi</option>
+              <option value="./imagenes/5.jpg">Mango</option>
+              <option value="./imagenes/6.jpg">Piña</option>
+            </select>
+            <input type="text" id="nombreFruta" placeholder="Nombre de la fruta">
+            <input type="button" id="btnNew" value="Nuevo" onclick="add()">
+            <input type="button" id="btnUpdate" value="Modificar" onclick="update()">
+          </form>
+          <table>
+            <thead>
+                <th><center><b>Nombre</b></center></th>
+                <th><center><b>Imagen</b></center></th> 
+                <th><center><b>Ruta</b></center></th>
+                <th><center><b>Acciones</b></center></th>
+            </thead>
+            <!-- Listado del CRUD -->
+            <tbody id="listadoCRUD">
+              
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="frutas.js"></script>  
+</body>
+
+</html>
